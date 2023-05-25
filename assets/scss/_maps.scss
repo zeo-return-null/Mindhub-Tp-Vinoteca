@@ -1,0 +1,24 @@
+// Breakpoints
+$breakpoints-up: ("large" : "992px",
+    "medium": "480px"
+);
+
+$breakpoints-down: ("small": "479px",
+    "small-medium": "900px",
+    "medium": "991px"
+);
+
+// Colors map
+$colors: ( // Background colors
+    bg-color-primary: $taupe-gray,
+    bg-color-secondary: $taupe-gray-s,
+    bg-dark-color: $taupe-gray,
+    bg-dark-alternative-color: $chocolate-cosmo,
+    accent-color: $rose-taupe,
+
+    // Utilities colors
+    title-color: $crepe,
+    title-alternative-color: $chocolate-cosmo,
+    text-color: $crepe,
+    shadow-color: $crepe);
+

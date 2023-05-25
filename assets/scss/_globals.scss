@@ -1,0 +1,205 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: $font-p;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+}
+
+.bg-container {
+  background-color: map-get($colors, bg-color-primary);
+  width: 100%; 
+}
+
+.bg-dark-container {
+  background-color: map-get($colors, bg-dark-color) !important;
+}
+
+.container {
+  display: flex;
+  
+  &-search {
+    display: flex;
+    flex-direction: column-reverse;
+    gap: 1rem;
+    margin: 2rem 2rem 0 2rem;
+  }
+
+  &-vertical {
+    flex-direction: column;
+  }
+
+}
+
+.visibility-hidden {
+  visibility: hidden;
+}
+
+.justify-evenly {
+  justify-content: space-evenly !important;
+}
+
+.justify-between {
+  justify-content: space-between;
+}
+
+.header {
+  .navbar {
+    background-color: map-get($colors, bg-dark-color) !important;
+  }
+
+  .logo {
+    width: 4rem;
+    height: 3rem;
+   filter: invert(12%) sepia(58%) saturate(1312%) hue-rotate(308deg) brightness(92%) contrast(93%);
+
+   @include breakpoint-down(small) {
+    width: 3rem;
+    height: 2rem;
+   }
+  }
+
+  .title {
+    height: 2rem;
+    font-family: $font-title;
+    text-shadow: 2px 2px map-get($colors, shadow-color);
+
+    @include breakpoint-down(small) {
+      font-size: 1rem;
+      word-wrap:break-word;
+    }
+  }
+
+  .navbar-collapse {
+    flex-grow: 0;
+  }
+
+  .nav-link {
+    margin: 0.0rem;
+    border-radius: 0.0rem;
+    border-bottom: 0.2rem solid map-get($colors, bg-color-primary);
+    color: map-get($colors, bg-dark-alternative-color) !important;
+    transition: all 200ms ease-in-out;
+    &:hover {
+      transition: all 200ms ease-in-out;
+      border-bottom: 0.2rem solid map-get($colors, bg-dark-alternative-color);
+      color: map-get($colors, text-color) !important;
+    }
+  }
+
+  .container-position {
+    @extend .container;
+    @extend .justify-between;
+    margin-bottom: 0.65rem;
+    background-color: map-get($colors, bg-dark-alternative-color);
+    a {
+      width: 15rem;
+      height: 5rem;
+      text-align: center;
+      text-decoration: none;
+      color: map-get($colors, bg-dark-color);
+      line-height: 5rem;
+      font-size: 2rem;
+
+      &:hover {
+        color: map-get($colors, text-color);
+        transition: color 250ms ease-in-out;
+      }
+
+      :not(:hover) {
+        transition: color 150ms ease;
+      }
+
+      @include breakpoint-down(medium) {
+        width: 6rem;
+        height: 2rem;
+        line-height: 3rem;
+      }
+    }
+
+    .current {
+      text-align: center;
+      line-height: 5rem;
+      font-size: 3rem;
+      font-family: $font-title;
+      color: map-get($colors, text-color);
+
+      @include breakpoint-down(medium) {
+        line-height: 3rem;
+        font-size: 1.4rem;
+      }
+    }
+  }
+}
+
+.card {
+  background-color: map-get($colors, bg-color-secondary);
+
+  &-title {
+    height: 3rem;
+    margin-bottom: 1rem;
+    color: map-get($colors, title-alternative-color)
+  }
+
+  &-body {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &-img {
+    height: 14rem;
+    width: 6rem;
+    object-fit: cover;
+  }
+
+  &-description {
+    font-size: 0.9rem;  
+  }
+}
+
+.vh-70 {
+  min-height: 70vh;
+}
+
+.details {
+  &-img {
+    height: 12rem;
+    border-radius: 0.3rem;
+  }
+}
+
+.btn-primary {
+  border: none;
+  height: 2.5rem;
+  width: 5rem;
+  background-color: map-get($colors, bg-dark-alternative-color) !important;
+  color: map-get($colors, text-color) !important;
+  transition: all 200ms ease-in-out;
+
+   &:hover {
+    transition: all 200ms ease-in-out;
+    background-color: map-get($colors, accent-color) !important;
+  }
+}
+
+.form {
+  height: 70vh;
+}
+
+.footer {
+  justify-self: flex-end;
+
+  .rrss {
+    height: 2rem;
+    width: 2rem;
+    margin: 1rem 0.75rem 1rem 0.75rem;
+    filter: invert(12%) sepia(58%) saturate(1312%) hue-rotate(308deg) brightness(92%) contrast(93%);
+  }
+
+}
