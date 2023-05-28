@@ -1,8 +1,9 @@
-const cardsContainer = document.getElementById("cards-container")
 const checkboxContainer = document.getElementById("checkbox-container")
+const cardsContainer = document.getElementById("cards-container")
+const detailsContainer = document.getElementById("details-container")
+const membersContainer = document.getElementById("members-container")
 let searchId = document.getElementById("searchId")
 let checkboxItems = Array.from(document.querySelectorAll(".check-item"))
-const detailsContainer = document.getElementById("details-container")
 
 async function getVinos() {
   let response = await fetch("https://api-luxe-drive.onrender.com/vinos")
@@ -11,7 +12,8 @@ async function getVinos() {
   let data = await response.json()
 
   if (pathname == "/pages/members.html") {
-
+    let membersSubscriptions = data.servicios
+    membersSubscriptions.forEach(createCardMembershipInfo)
   }
 
   if (pathname == "/pages/contact.html") {
@@ -78,10 +80,9 @@ async function getVinos() {
       let filteredVinos = data.vinos.filter((vino) => {
         return vino.selection == true
       })
-      console.log(filteredVinos)
       vinosData = filteredVinos
       leftArrow.href = "./index.html"
-      menuTitle.textContent = "vinos Seleccionados"
+      menuTitle.textContent = "Vinos Seleccionados"
       rightArrow.href = "./pages/members.html"
     }
 
@@ -186,6 +187,31 @@ function createCard(e) {
   </div>
   `
   cardsContainer.innerHTML += cardTemplate
+}
+
+function createCardMembershipInfo(e) {
+  if (e.name == "Unete a nuestro Club") {
+  infoTemplate = `
+    <div class="m-4 member-card">
+      <h4 class="title text-center">${e.name}</h4>
+    </div>
+    <p class="description text-center">${e.description}</p>
+    `
+  } else if (e.name == " "){
+  infoTemplate = `
+    <div class="m-4">
+      <p class="description text-center">${e.description}</p>
+    </div>
+    `
+  } else {
+    infoTemplate = `
+    <div class="m-4 member-card">
+      <h4 class="title mb-4">${e.name}</h4>
+      <p class="description">${e.description}</p>
+    </div>
+    `
+  }
+  membersContainer.innerHTML += infoTemplate
 }
 
 // debounce para que la ejecucion del filtrado ocurra luego de terminar de tipear

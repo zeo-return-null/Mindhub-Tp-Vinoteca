@@ -49,6 +49,7 @@ body {
   justify-content: space-between;
 }
 
+
 .header {
   .navbar {
     background-color: map-get($colors, bg-dark-color) !important;
@@ -66,7 +67,8 @@ body {
   }
 
   .title {
-    height: 2rem;
+    height: 1.1rem;
+    font-size: 1.5rem;
     font-family: $font-title;
     text-shadow: 2px 2px map-get($colors, shadow-color);
 
@@ -126,7 +128,7 @@ body {
     .current {
       text-align: center;
       line-height: 5rem;
-      font-size: 3rem;
+      font-size: 2rem;
       font-family: $font-title;
       color: map-get($colors, text-color);
 
@@ -171,6 +173,18 @@ body {
   &-img {
     height: 12rem;
     border-radius: 0.3rem;
+  }
+}
+
+.member-card {
+  background-color: map-get($colors, bg-color-secondary );
+  padding: 2rem;
+  border-radius: 0.5rem;
+  
+  .title {
+    height: 1.2rem;
+    font-family: $font-title;
+    text-shadow: 2px 2px map-get($colors, shadow-color);
   }
 }
 
