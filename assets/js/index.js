@@ -21,13 +21,13 @@ async function getVinos() {
     let modal = document.getElementById("modal")
 
     function actionForm(e) {
-      e.prvinoDefault()
+      e.preventDefault()
       let formData = {
         email: e.target[1].value,
         name: e.target[0].value,
         message: e.target[2].value
       }
-      form.classList.add("visibility-hidden", "h-25")
+      form.classList.add("invisible")
       modalTemplate = `
           <h3 class="mb-2 text-center">Gracias <b>${formData.name}</b></h4>
           <h5 class="m-3 text-center">Tu mensaje: <i>${formData.message}</i></p>
@@ -50,9 +50,9 @@ async function getVinos() {
     const leftArrow = document.getElementById("leftArrow")
     const rightArrow = document.getElementById("rightArrow")
     const menuTitle = document.getElementById("current")
-    leftArrow.style.visibility = "hidden"
+    leftArrow.style.visibility = "none"
     menuTitle.textContent = vinoDetails[0].name
-    rightArrow.style.visibility = "hidden"
+    rightArrow.style.visibility = "none"
 
     // crear detalles de un vino
     function createDetails(e) {

@@ -26,9 +26,6 @@ body {
   .container-vertical {
     flex-direction: column; }
 
-.visibility-hidden {
-  visibility: hidden; }
-
 .justify-evenly {
   justify-content: space-evenly !important; }
 
